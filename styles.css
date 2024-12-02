@@ -1,0 +1,563 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+}
+
+/* ==========================================================================
+   Navigation Bar Styles
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: transparent;
+    padding: 0.5rem 3rem;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: #000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #808080;
+}
+
+.navbar a.active {
+    color: #808080;
+    text-decoration: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.download-btn {
+    background-color: white;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #808080;
+    color: rgb(0, 0, 0);
+}
+
+/* ==========================================================================
+   Hero Section Styles
+   ========================================================================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 3rem;
+    color: white;
+    background-image: url('../Images/Fluid-Art-Wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.hero h1, .hero h2 {
+    animation: heroFadeIn 1s ease forwards;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.navbar a i,
+.nav-right i {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover i,
+.nav-right a:hover i {
+    color: #808080;
+}
+
+/* ==========================================================================
+   Loading Animation Styles
+   ========================================================================== */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.square-loader {
+    width: 50px;
+    height: 50px;
+    background: black;
+    border: 2px solid white;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Experience Section Styles
+   ========================================================================== */
+.experience-section {
+    padding: 5rem 3rem;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.experience-card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.experience-header {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    transition: background-color 0.3s ease;
+}
+
+.experience-header:hover {
+    background: #2a2a2a;
+}
+
+.header-content h3 {
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.position {
+    color: #808080;
+    margin-bottom: 0.25rem;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.experience-header i {
+    transition: transform 0.3s ease;
+    color: #808080;
+}
+
+.experience-card.active .experience-header i {
+    transform: rotate(180deg);
+}
+
+.experience-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #1a1a1a;
+}
+
+.experience-card.active .experience-details {
+    max-height: 500px; /* Adjust this value based on your content */
+    transition: max-height 0.5s ease-in;
+}
+
+.experience-details ul {
+    padding: 1.5rem;
+    list-style-position: inside;
+}
+
+.experience-details li {
+    margin-bottom: 0.75rem;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+.experience-details li:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Skills Section Styles
+   ========================================================================== */
+.skills-section {
+    padding: 5rem 3rem;
+    background: #000;
+}
+
+.skills-container {
+    text-align: center;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+#extended-skills {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+#extended-skills.show {
+    opacity: 1;
+    max-height: 1000px; /* Adjust this value based on your content */
+}
+
+.skill-tag {
+    background: #1a1a1a;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: #333;
+}
+
+.hidden {
+    opacity: 0;
+    max-height: 0;
+}
+
+.skills-expand-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.skills-expand-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* ==========================================================================
+   Projects Section Styles
+   ========================================================================== */
+.projects-section {
+    padding: 5rem 3rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #1a1a1a;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay span {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.project-title {
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+    background: #1a1a1a;
+}
+
+/* ==========================================================================
+   Contact Section Styles
+   ========================================================================== */
+.contact-section {
+    padding: 5rem 3rem;
+    background: #000;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    background: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: white;
+    color: black;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #808080;
+}
+
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
+.footer {
+    padding: 2rem 3rem;
+    background: #000;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #808080;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Bio Section Styles
+   ========================================================================== */
+.bio-section {
+    background: #000;
+    padding: 5rem 3rem;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.bio-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.bio-image {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.bio-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.bio-content {
+    color: white;
+}
+
+.bio-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media (max-width: 768px) {
+    .bio-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .bio-image {
+        width: 100%;
+    }
+    
+    .bio-section {
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+}
+
+/* Add to your existing CSS */
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

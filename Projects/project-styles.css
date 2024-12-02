@@ -1,0 +1,230 @@
+/* Common Project Page Styles */
+
+/* Layout */
+.project-detail-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 160px); /* Accounts for navbar and footer */
+}
+
+/* Back Navigation */
+.back-button {
+    margin-bottom: 2rem;
+    padding: 0.5rem 0;
+}
+
+.back-button a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-color, #333);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: var(--background-light, #f5f5f5);
+}
+
+.back-button a:hover {
+    background-color: var(--primary-color, #007bff);
+    color: white;
+    transform: translateX(-5px);
+}
+
+.back-button i {
+    margin-right: 0.5rem;
+}
+
+/* Project Header */
+.project-header {
+    margin-bottom: 3rem;
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--border-color, #eee);
+}
+
+.project-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color, #222);
+}
+
+.project-meta {
+    margin-top: 1rem;
+    color: var(--text-secondary, #666);
+}
+
+.project-date {
+    display: block;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+/* Content Sections */
+.project-section {
+    margin-bottom: 4rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.project-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--heading-color, #222);
+    border-left: 4px solid var(--primary-color, #007bff);
+    padding-left: 1rem;
+}
+
+/* Image Gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-figure {
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.project-figure:hover {
+    transform: translateY(-5px);
+}
+
+.project-figure img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.project-figure:hover img {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-figure figcaption {
+    margin-top: 0.8rem;
+    text-align: center;
+    color: var(--text-secondary, #666);
+    font-size: 0.9rem;
+}
+
+/* Technical Details */
+.technical-list {
+    list-style: none;
+    padding: 0;
+}
+
+.technical-list li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--background-light, #f5f5f5);
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.technical-list li:hover {
+    transform: translateX(5px);
+}
+
+.technical-list strong {
+    color: var(--primary-color, #007bff);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Project Links */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--background-light, #f5f5f5);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-color, #333);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.project-link:hover {
+    background-color: var(--primary-color, #007bff);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.project-link i {
+    margin-right: 0.5rem;
+}
+
+/* Tags */
+.project-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-tag {
+    padding: 0.4rem 1rem;
+    background-color: var(--tag-background, #e9ecef);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--tag-text, #495057);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-detail-main {
+        padding: 1rem;
+    }
+
+    .project-header h1 {
+        font-size: 2rem;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Dark Mode Support (if needed) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-light: #2a2a2a;
+        --text-color: #fff;
+        --text-secondary: #ccc;
+        --heading-color: #fff;
+        --border-color: #444;
+        --tag-background: #3a3a3a;
+        --tag-text: #fff;
+    }
+} 

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head Section: Meta tags, title, and stylesheets -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Angel Ramirez</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="projects-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="loader-wrapper">
+        <div class="square-loader"></div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="https://www.linkedin.com/in/angel-ramirez-54b8851b0/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/yourhandle" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <button class="download-btn">Download CV</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="projects-page-main">
+        <!-- Page Header -->
+        <header class="projects-header">
+            <h1>My Projects</h1>
+            <p>A collection of my security research and implementations</p>
+        </header>
+
+        <!-- Project Filters -->
+        <section class="filter-section">
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+                <button class="filter-btn" data-filter="security">Security Analysis</button>
+                <button class="filter-btn" data-filter="network">Network Security</button>
+                <button class="filter-btn" data-filter="incident">Incident Response</button>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="projects-grid-section">
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card" data-category="automation security">
+                    <a href="project1.html">
+                        <div class="project-image">
+                            <img src="../Images/Project-Image-PlaceHolder.jpg" alt="Security Automation Framework">
+                            <div class="project-overlay">
+                                <span>View Project</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Security Automation Framework</h3>
+                            <p>Automated security response system for threat detection and incident management</p>
+                            <div class="project-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Automation</span>
+                                <span class="skill-tag">Security</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card" data-category="security incident">
+                    <a href="threat-detection.html">
+                        <div class="project-image">
+                            <img src="../Images/Project-Image-PlaceHolder.jpg" alt="Threat Detection System">
+                            <div class="project-overlay">
+                                <span>View Project</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Threat Detection System</h3>
+                            <p>Advanced threat detection system using machine learning algorithms</p>
+                            <div class="project-tags">
+                                <span class="skill-tag">ML</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Security</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card" data-category="network security">
+                    <a href="network-analysis.html">
+                        <div class="project-image">
+                            <img src="../Images/Project-Image-PlaceHolder.jpg" alt="Network Traffic Analysis Tool">
+                            <div class="project-overlay">
+                                <span>View Project</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Network Traffic Analysis Tool</h3>
+                            <p>Real-time network traffic monitoring and analysis system for threat detection</p>
+                            <div class="project-tags">
+                                <span class="skill-tag">Wireshark</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Network</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card" data-category="incident automation">
+                    <a href="incident-response.html">
+                        <div class="project-image">
+                            <img src="../Images/Project-Image-PlaceHolder.jpg" alt="Incident Response Platform">
+                            <div class="project-overlay">
+                                <span>View Project</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Incident Response Platform</h3>
+                            <p>Automated incident response platform with customizable playbooks and reporting</p>
+                            <div class="project-tags">
+                                <span class="skill-tag">SOAR</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Automation</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Angel Ramirez. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/angel-ramirez-54b8851b0/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourhandle"><i class="fab fa-x-twitter"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Add navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Loader Animation
+        window.addEventListener('load', function() {
+            const loader = document.querySelector('.loader-wrapper');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Project Filtering Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projects = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    projects.forEach(project => {
+                        if (filterValue === 'all' || project.getAttribute('data-category').includes(filterValue)) {
+                            project.style.display = 'block';
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

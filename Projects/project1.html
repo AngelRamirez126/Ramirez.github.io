@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head Section -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Automation Framework - Angel Ramirez</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="projects-page.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="loader-wrapper">
+        <div class="square-loader"></div>
+    </div>
+
+    <!-- Navigation Bar (Same as projects.html) -->
+    <nav class="navbar">
+        <!-- ... Copy the same navbar code from projects.html ... -->
+    </nav>
+
+    <!-- Main Content -->
+    <main class="project-detail-main">
+        <!-- Back Button -->
+        <div class="back-button">
+            <a href="projects.html"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+        </div>
+
+        <!-- Project Header -->
+        <header class="project-header">
+            <h1>Security Automation Framework</h1>
+            <div class="project-meta">
+                <span class="project-date">Completed: January 2024</span>
+                <div class="project-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Automation</span>
+                    <span class="skill-tag">Security</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Project Content -->
+        <article class="project-content">
+            <!-- Project Overview -->
+            <section class="project-section">
+                <h2>Project Overview</h2>
+                <p>Detailed description of the project, its goals, and the problem it solves...</p>
+            </section>
+
+            <!-- Project Images/Screenshots -->
+            <section class="project-section">
+                <h2>Implementation</h2>
+                <div class="project-gallery">
+                    <figure class="project-figure">
+                        <img src="../Images/project-screenshot-1.jpg" alt="System Architecture">
+                        <figcaption>System Architecture Diagram</figcaption>
+                    </figure>
+                    <figure class="project-figure">
+                        <img src="../Images/project-screenshot-2.jpg" alt="Dashboard Interface">
+                        <figcaption>Dashboard Interface</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Technical Details -->
+            <section class="project-section">
+                <h2>Technical Details</h2>
+                <ul class="technical-list">
+                    <li><strong>Technologies Used:</strong> List of technologies...</li>
+                    <li><strong>Architecture:</strong> Description of system architecture...</li>
+                    <li><strong>Key Features:</strong> List of main features...</li>
+                </ul>
+            </section>
+
+            <!-- Challenges and Solutions -->
+            <section class="project-section">
+                <h2>Challenges & Solutions</h2>
+                <p>Discussion of challenges faced and how they were overcome...</p>
+            </section>
+
+            <!-- Results and Impact -->
+            <section class="project-section">
+                <h2>Results & Impact</h2>
+                <p>Description of project outcomes and impact...</p>
+            </section>
+
+            <!-- Links/Resources -->
+            <section class="project-section">
+                <h2>Resources</h2>
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fab fa-github"></i> View on GitHub</a>
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer (Same as projects.html) -->
+    <footer class="footer">
+        <!-- ... Copy the same footer code from projects.html ... -->
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Add navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Existing loader animation code...
+        window.addEventListener('load', function() {
+            const loader = document.querySelector('.loader-wrapper');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 
