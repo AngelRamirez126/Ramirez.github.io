@@ -55,13 +55,15 @@
 
     <!-- Bio Section -->
     <section id="bio" class="bio-section">
+        <h2 class="typing-text">About Me</h2>
         <div class="bio-container">
             <div class="bio-image">
-                <img src="../Images/Portrait-PlaceHolder.jpg" alt="Professional headshot">
+                <img src="/Images/portrait.png" alt="Professional headshot" class="portrait">
             </div>
             <div class="bio-content">
-                <p>As an Information Security Analyst with a proven track record in system administration and security operations, I specialize in implementing security protocols and leading threat hunting initiatives. My expertise includes vulnerability assessment and incident response.</p>
-                <p>I bring a detail-oriented approach to security challenges, combining technical proficiency with strong analytical and communication skills to deliver comprehensive security solutions that protect organizations.</p>
+                <p class="typing-text">As an Information Security Analyst with a proven track record in system administration and security operations, I specialize in implementing security protocols and leading threat hunting initiatives. My expertise includes vulnerability assessment and incident response.</p>
+                <br>
+                <p class="typing-text">I bring a detail-oriented approach to security challenges, combining technical proficiency with strong analytical and communication skills to deliver comprehensive security solutions that protect organizations.</p>
             </div>
         </div>
     </section>
@@ -328,6 +330,111 @@
             cards.forEach(card => {
                 const details = card.querySelector('.experience-details');
                 details.style.maxHeight = "0";
+            });
+        });
+
+        // Initialize ScrollReveal with fade effect
+        const sr = ScrollReveal({
+            opacity: 0,
+            duration: 1000,
+            distance: '30px',
+            delay: 200,
+            easing: 'ease',
+            reset: false
+        });
+
+        // Navbar animations
+        sr.reveal('.navbar', {
+            opacity: 1,
+            duration: 1500,
+            distance: '0px'
+        });
+
+        // Hero section with fade
+        sr.reveal('.hero h1', { 
+            origin: 'left',
+            opacity: 0,
+            interval: 200
+        });
+        sr.reveal('.hero h2', { 
+            origin: 'left',
+            delay: 400,
+            opacity: 0
+        });
+
+        // Bio section with fade
+        sr.reveal('.bio-section h2', {
+            origin: 'top',
+            opacity: 0
+        });
+        sr.reveal('.bio-image', {
+            origin: 'bottom',
+            opacity: 0,
+            delay: 200
+        });
+        sr.reveal('.bio-content', {
+            origin: 'bottom',
+            opacity: 0,
+            delay: 400
+        });
+
+        // Experience cards with fade
+        sr.reveal('.experience-section h2', {
+            origin: 'top',
+            opacity: 0
+        });
+        sr.reveal('.experience-card', {
+            origin: 'bottom',
+            interval: 200,
+            opacity: 0
+        });
+
+        // Skills with staggered fade
+        sr.reveal('.skills-section h2', {
+            origin: 'top',
+            opacity: 0
+        });
+        sr.reveal('.skill-tag', {
+            origin: 'bottom',
+            interval: 50,
+            opacity: 0,
+            distance: '20px'
+        });
+        sr.reveal('.skills-expand-btn', {
+            origin: 'bottom',
+            opacity: 0,
+            delay: 400
+        });
+
+        // Contact section with fade
+        sr.reveal('.contact-section h2', {
+            origin: 'top',
+            opacity: 0
+        });
+        sr.reveal('.contact-item', {
+            origin: 'bottom',
+            interval: 200,
+            opacity: 0
+        });
+
+        // Footer with fade
+        sr.reveal('.footer p', {
+            origin: 'bottom',
+            opacity: 0
+        });
+        sr.reveal('.social-links', {
+            origin: 'bottom',
+            opacity: 0,
+            delay: 200
+        });
+
+        // Add smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>

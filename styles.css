@@ -8,9 +8,26 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Anonymous Pro', monospace;
     background-color: #000;
     color: white;
+}
+
+/* Update specific text elements to ensure font consistency */
+h1, h2, h3, h4, h5, h6, p, a, span, li, button {
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.navbar a {
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.nav-right .download-btn {
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.skills-expand-btn {
+    font-family: 'Anonymous Pro', monospace;
 }
 
 /* ==========================================================================
@@ -497,54 +514,64 @@ body {
     z-index: 1;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+.bio-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
 .bio-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
     align-items: center;
+    gap: 4rem;
 }
 
 .bio-image {
-    position: relative;
-    margin: 0 auto
+    flex: 1;
+    text-align: center;
 }
 
 .bio-image img {
-    width: 400px;
-    height: auto;
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .bio-content {
-    color: white;
+    flex: 1;
+    line-height: 1.6;
+    font-size: 1.1rem;
 }
 
 .bio-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
+/* Responsive design */
 @media (max-width: 768px) {
+    .bio-section {
+        padding: 3rem 1.5rem;
+    }
+
     .bio-container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 2rem;
     }
     
-    .bio-image {
-        width: 100%;
+    .bio-image img {
+        width: 400px;
+        height: 400px;
     }
-    
-    .bio-section {
-        padding: 3rem 1.5rem;
-        min-height: auto;
+
+    .bio-content {
+        text-align: center;
     }
 }
 
@@ -556,9 +583,11 @@ html {
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -588,3 +617,26 @@ html {
 .skill-tag i {
     margin-right: 8px;
 }
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add these classes to your existing CSS */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
