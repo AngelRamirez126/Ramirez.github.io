@@ -1321,3 +1321,46 @@ html {
         color: #808080;
     }
 }
+
+/* Update navbar and menu visibility */
+.menu-container {
+    display: none; /* Hide hamburger by default */
+}
+
+#sidebar-menu {
+    display: none; /* Hide sidebar by default */
+}
+
+/* Show regular nav items for desktop/tablet */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin-right: auto; /* Push nav items to the left */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #808080;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide regular nav items */
+    }
+
+    .menu-container {
+        display: flex; /* Show hamburger menu */
+    }
+
+    #sidebar-menu {
+        display: block; /* Show sidebar */
+    }
+}
