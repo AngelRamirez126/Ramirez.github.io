@@ -29,13 +29,21 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-content">
-            <button class="menu-btn" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <!-- Hamburger Menu -->
+            <div class="menu-container menu-icon" id="menu-icon" onclick="toggleNav()">
+                <div class="bars1"></div>
+                <div class="bars2"></div>
+                <div class="bars3"></div>
+            </div>
+            
+            <!-- Sidebar Menu -->
+            <div id="sidebar-menu" class="sidebar">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
             <div class="nav-right">
                 <a href="https://www.linkedin.com/in/angel-ramirez-54b8851b0/" target="_blank">
                     <i class="fab fa-linkedin"></i>
@@ -437,44 +445,42 @@
         });
 
         // Add this to your existing script section
-        function toggleMenu() {
-            const menu = document.querySelector('.nav-content ul');
-            const menuBtn = document.querySelector('.menu-btn i');
+        function toggleNav() {
+            const menuIcon = document.getElementById("menu-icon");
+            const sidebar = document.getElementById("sidebar-menu");
+            const navbar = document.querySelector('.navbar');
             
-            menu.classList.toggle('show');
+            menuIcon.classList.toggle("open");
             
-            // Toggle menu icon
-            if (menu.classList.contains('show')) {
-                menuBtn.classList.remove('fa-bars');
-                menuBtn.classList.add('fa-times');
+            if (!menuIcon.classList.contains("open")) {
+                sidebar.style.transform = "translateX(-160px)";
             } else {
-                menuBtn.classList.remove('fa-times');
-                menuBtn.classList.add('fa-bars');
+                sidebar.style.transform = "translateX(0px)";
             }
         }
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.querySelector('.nav-content ul');
-            const menuBtn = document.querySelector('.menu-btn');
-            
-            if (!menu.contains(event.target) && !menuBtn.contains(event.target) && menu.classList.contains('show')) {
-                menu.classList.remove('show');
-                menuBtn.querySelector('i').classList.remove('fa-times');
-                menuBtn.querySelector('i').classList.add('fa-bars');
-            }
+        // Close menu when clicking a link
+        document.querySelectorAll('#sidebar-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const menuIcon = document.getElementById("menu-icon");
+                const sidebar = document.getElementById("sidebar-menu");
+                
+                menuIcon.classList.remove("open");
+                sidebar.style.transform = "translateX(-160px)";
+            });
         });
 
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-content ul a').forEach(link => {
-            link.addEventListener('click', () => {
-                const menu = document.querySelector('.nav-content ul');
-                const menuBtn = document.querySelector('.menu-btn i');
-                
-                menu.classList.remove('show');
-                menuBtn.classList.remove('fa-times');
-                menuBtn.classList.add('fa-bars');
-            });
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById("sidebar-menu");
+            const menuIcon = document.getElementById("menu-icon");
+            
+            if (!sidebar.contains(event.target) && 
+                !menuIcon.contains(event.target) && 
+                menuIcon.classList.contains("open")) {
+                menuIcon.classList.remove("open");
+                sidebar.style.transform = "translateX(-160px)";
+            }
         });
     </script>
 </body>
