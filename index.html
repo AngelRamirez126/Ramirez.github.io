@@ -29,18 +29,17 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-content">
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <!-- <li><a href="../Projects/projects.html">Projects</a></li> -->
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-right">
                 <a href="https://www.linkedin.com/in/angel-ramirez-54b8851b0/" target="_blank">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <!-- <a href="https://twitter.com/yourhandle" target="_blank">
-                    <i class="fab fa-x-twitter"></i>
-                </a> -->
                 <a href="/Files/Angel Ramirez Resume.pdf" class="download-btn">Download CV</a>
             </div>
         </div>
@@ -434,6 +433,47 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+
+        // Add this to your existing script section
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-content ul');
+            const menuBtn = document.querySelector('.menu-btn i');
+            
+            menu.classList.toggle('show');
+            
+            // Toggle menu icon
+            if (menu.classList.contains('show')) {
+                menuBtn.classList.remove('fa-bars');
+                menuBtn.classList.add('fa-times');
+            } else {
+                menuBtn.classList.remove('fa-times');
+                menuBtn.classList.add('fa-bars');
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.querySelector('.nav-content ul');
+            const menuBtn = document.querySelector('.menu-btn');
+            
+            if (!menu.contains(event.target) && !menuBtn.contains(event.target) && menu.classList.contains('show')) {
+                menu.classList.remove('show');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-content ul a').forEach(link => {
+            link.addEventListener('click', () => {
+                const menu = document.querySelector('.nav-content ul');
+                const menuBtn = document.querySelector('.menu-btn i');
+                
+                menu.classList.remove('show');
+                menuBtn.classList.remove('fa-times');
+                menuBtn.classList.add('fa-bars');
             });
         });
     </script>
