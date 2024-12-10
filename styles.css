@@ -645,7 +645,8 @@ html {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 0.3rem;
+        width: 100%;
+        padding: 0 1rem;
     }
 
     .nav-content ul {
@@ -670,12 +671,13 @@ html {
 
     .nav-right {
         display: flex;
-        gap: 1rem;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     .nav-right .download-btn {
-        padding: 0.5rem 1rem;
         font-size: 0.9rem;
+        padding: 0.5rem 1rem;
     }
 }
 
@@ -691,7 +693,23 @@ html {
     }
 
     .nav-content {
-        padding: 0 0.6rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 0.8rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-right {
+        margin-left: auto;
+        gap: 0.5rem;
     }
 }
 
@@ -699,70 +717,26 @@ html {
 @media screen and (max-width: 375px) {
     .navbar {
         padding: 0.5rem;
-        background-color: transparent;
-    }
-
-    .navbar.scrolled {
-        background-color: #000;
     }
 
     .nav-content {
-        padding: 0 0.5rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
     }
 
-    .menu-btn {
-        padding: 0.3rem;
-        padding-left: 0;
-        font-size: 1.3rem;
-        margin-right: auto;
+    .nav-links {
+        display: flex;
+        gap: 0.8rem;
+        margin: 0;
+        padding: 0;
     }
 
     .nav-right {
+        margin-left: auto;
         gap: 0.5rem;
-    }
-
-    .nav-right .download-btn {
-        font-size: 0.75rem;
-        padding: 0.45rem 0.7rem;
-    }
-
-    .nav-right i {
-        font-size: 1.1rem;
-        padding: 0.35rem;
-    }
-
-    /* Hero section adjustments */
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero h2 {
-        font-size: 1.4rem;
-    }
-
-    /* Skills grid adjustments */
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.9rem;
-    }
-
-    .skill-tag {
-        padding: 0.85rem;
-        font-size: 0.82rem;
-    }
-
-    /* Section padding adjustments */
-    .experience-section,
-    .skills-section,
-    .bio-section,
-    .contact-section {
-        padding: 2.5rem 1.2rem;
-    }
-
-    .bio-image img {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
     }
 }
 
@@ -1082,11 +1056,18 @@ html {
         gap: 0.3rem;
     }
 
-    .menu-btn {
-        padding: 0.3rem;
-        padding-left: 0;
-        font-size: 1.3rem;
+    .nav-content ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
         margin-right: auto;
+        position: relative;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        text-align: left;
+        margin: 0;
+        border-top: none;
     }
 
     .nav-right {
@@ -1096,23 +1077,6 @@ html {
     .nav-right i {
         font-size: 1.1rem;
         padding: 0.35rem;
-    }
-
-    .nav-content ul {
-        display: none;
-        position: fixed;
-        left: 0;
-        width: 100%;
-        background: #000;
-        flex-direction: column;
-        padding: 1rem 0;
-        text-align: center;
-        margin: 0;
-        border-top: 1px solid #333;
-    }
-
-    .nav-content ul.show {
-        display: flex;
     }
 
     .skills-grid {
@@ -1381,15 +1345,32 @@ html {
 /* Mobile styles */
 @media screen and (max-width: 768px) {
     .nav-links {
-        display: none; /* Hide regular nav items */
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin: 0;
     }
 
-    .menu-container {
-        display: flex; /* Show hamburger menu */
+    .navbar {
+        padding: 0.5rem 1rem;
     }
 
-    #sidebar-menu {
-        display: block; /* Show sidebar */
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-right .download-btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
     }
 }
 
