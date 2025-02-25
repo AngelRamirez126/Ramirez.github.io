@@ -29,27 +29,11 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-content">
-            <!-- Hamburger Menu (visible on mobile only) -->
-            <div class="menu-container menu-icon" id="menu-icon" onclick="toggleNav()">
-                <div class="bars1"></div>
-                <div class="bars2"></div>
-                <div class="bars3"></div>
-            </div>
-            
-            <!-- Regular Nav Links (visible on desktop/tablet) -->
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             
-            <!-- Sidebar Menu (visible on mobile only) -->
-            <div id="sidebar-menu" class="sidebar">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
             <div class="nav-right">
                 <a href="https://www.linkedin.com/in/angel-ramirez-54b8851b0/" target="_blank">
                     <i class="fab fa-linkedin"></i>
@@ -448,45 +432,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Add this to your existing script section
-        function toggleNav() {
-            const menuIcon = document.getElementById("menu-icon");
-            const sidebar = document.getElementById("sidebar-menu");
-            const navbar = document.querySelector('.navbar');
-            
-            menuIcon.classList.toggle("open");
-            
-            if (!menuIcon.classList.contains("open")) {
-                sidebar.style.transform = "translateX(-160px)";
-            } else {
-                sidebar.style.transform = "translateX(0px)";
-            }
-        }
-
-        // Close menu when clicking a link
-        document.querySelectorAll('#sidebar-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                const menuIcon = document.getElementById("menu-icon");
-                const sidebar = document.getElementById("sidebar-menu");
-                
-                menuIcon.classList.remove("open");
-                sidebar.style.transform = "translateX(-160px)";
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const sidebar = document.getElementById("sidebar-menu");
-            const menuIcon = document.getElementById("menu-icon");
-            
-            if (!sidebar.contains(event.target) && 
-                !menuIcon.contains(event.target) && 
-                menuIcon.classList.contains("open")) {
-                menuIcon.classList.remove("open");
-                sidebar.style.transform = "translateX(-160px)";
-            }
         });
     </script>
 </body>
